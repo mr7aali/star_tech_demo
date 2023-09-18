@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { HiOutlineInboxIn } from "react-icons/hi";
-import { AiOutlineSearch } from "react-icons/ai"
-import { MdOutlineElectricBolt, MdOutlineManageAccounts } from "react-icons/md";
+import dynamic from 'next/dynamic';
+
+const HiOutlineInboxIn = dynamic(() => import('react-icons/hi').then((module) => module.HiOutlineInboxIn))
+const AiOutlineSearch = dynamic(() => import('react-icons/ai').then((module) => module.AiOutlineSearch));
+const MdOutlineElectricBolt = dynamic(() => import('react-icons/md').then((module) => module.MdOutlineElectricBolt))
+const MdOutlineManageAccounts = dynamic(() => import('react-icons/md').then((module) => module.MdOutlineManageAccounts))
 import Image from "next/image";
 
 const Navbar = () => {

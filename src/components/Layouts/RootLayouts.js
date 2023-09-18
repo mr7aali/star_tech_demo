@@ -1,14 +1,13 @@
-import Footer from "../sheared/Footer";
-import Navbar from "../sheared/Navbar";
-
-
+import dynamic from "next/dynamic";
+const DynamicNav = dynamic(() => import("../sheared/Navbar"));
+const DynamicFooter = dynamic(() => import("../sheared/Footer"));
 
 const RootLayouts = ({ children }) => {
     return (
         <div>
-            <Navbar />
+            <DynamicNav />
             {children}
-            <Footer />
+            <DynamicFooter />
         </div>
     );
 };
