@@ -1,11 +1,9 @@
-import RootLayouts from '@/components/Layouts/RootLayouts';
-import Navbar from '@/components/sheared/Navbar';
-import React from 'react';
-
+import dynamic from "next/dynamic";
+const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));
 const HomePage = () => {
   return (
     <div >
-     
+
       <div >
         <h1 className='text-center text-2xl p-5'>This is my home Page</h1>
       </div>
@@ -14,6 +12,8 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
 
 HomePage.getLayout = function getLayout(page) {
   return (
