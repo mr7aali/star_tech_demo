@@ -12,12 +12,22 @@ const Navbar = () => {
       <div className='bg-[#081621]'>
         <div className='container mx-auto top  flex justify-between items-center'>
           <div className='container mx-auto flex justify-center items-center'>
-            <Link href={"/"} aria-label='Start tech' className='mx-4 py-5 hidden md:block'>
+            <Link
+              href={"/"}
+              aria-label='Start tech'
+              className='mx-4 py-5 hidden md:block'>
               <Image
                 src='https://seeklogo.com/images/S/startech-logo-0BF29AE753-seeklogo.com.png'
+                sizes="100vw"
                 width={117}
                 height={92}
-                alt=''
+                style={{
+                  width:'6rem',
+                  height:'100%'
+                }}
+                alt='Logo'
+                as='logo'
+                priority={false}
               />
             </Link>
 
