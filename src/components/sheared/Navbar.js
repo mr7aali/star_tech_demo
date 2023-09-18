@@ -9,13 +9,10 @@ import Image from "next/image";
 
 const Navbar = () => {
     return (
-      <div>
-        <div className='top bg-[#081621] flex justify-center items-center'>
-          <div className='container mx-auto flex items-center'>
-            <Link
-              href={"/"}
-              aria-label='Start tech'
-              className='mx-4 py-5'>
+      <div className='bg-[#081621]'>
+        <div className='container mx-auto top  flex justify-between items-center'>
+          <div className='container mx-auto flex justify-center items-center'>
+            <Link href={"/"} aria-label='Start tech' className='mx-4 py-5 hidden md:block'>
               <Image
                 src='https://seeklogo.com/images/S/startech-logo-0BF29AE753-seeklogo.com.png'
                 width={117}
@@ -24,7 +21,7 @@ const Navbar = () => {
               />
             </Link>
 
-            <div className=' h-[42px] flex-1 rounded-sm ml-5 relative'>
+            <div className='xl:block hidden  h-[42px] flex-1 rounded-sm ml-5 relative '>
               <input
                 className=' w-full rounded-sm h-full p-[15px] outline-none'
                 placeholder='Search'
@@ -34,26 +31,30 @@ const Navbar = () => {
               <AiOutlineSearch className='absolute right-0 top-2 cursor-pointer  text-[black] mr-4 text-2xl' />
             </div>
 
-            <div className='flex   mx-[50px]'>
-              <div className='mx-5 flex items-center'>
-                <HiOutlineInboxIn className='text-[#ef4a23] mr-4 text-2xl' />
+            <div className='flex justify-center'>
+              <div className='xm:mx-2 mx-3 flex items-center'>
+                <HiOutlineInboxIn className='text-[#ef4a23] mr-4 lg:text-2xl text-xl' />
                 <div>
                   <h3 className='text-[#fff] text-xm'>Offers</h3>
-                  <p className='text-[#acabab] text-sm'>Latest Offers</p>
+                  <p className='text-[#acabab] text-sm hidden lg:block'>
+                    Latest Offers
+                  </p>
                 </div>
               </div>
               <div className='mx-5 flex items-center'>
-                <MdOutlineElectricBolt className='text-[#ef4a23] mr-4 text-2xl' />
+                <MdOutlineElectricBolt className='text-[#ef4a23] mr-4 text-2xl sm:text-3xl' />
                 <div>
                   <h3 className='text-[#fff] text-xm'>Desktop Deal</h3>
-                  <p className='text-[#acabab] text-sm'>Special Deals</p>
+                  <p className='text-[#acabab] text-sm hidden lg:block'>
+                    Special Deals
+                  </p>
                 </div>
               </div>
               <div className='mx-5 flex items-center'>
                 <MdOutlineManageAccounts className='text-[#ef4a23] mr-4 text-2xl' />
                 <div>
                   <h3 className='text-[#fff] text-xm'>Account</h3>
-                  <p className='text-[#acabab] text-sm'>
+                  <p className='text-[#acabab] text-sm hidden lg:block'>
                     <Link
                       href={"/login"}
                       className='py-1 cursor-pointer hover:text-[#ef4a23]'>
@@ -69,17 +70,6 @@ const Navbar = () => {
                   </p>
                 </div>
               </div>
-              <Link
-                href={"pc_builder"}
-                className='mx-5 flex items-center justify-center rounded-md'
-                style={{ border: "1px solid #ef4a23" }}>
-                <button
-                  href='pc'
-                  style={{ border: "1px solid red" }}
-                  className='text-[#fff] h-full w-[100%] px-5'>
-                  PC Builder
-                </button>
-              </Link>
             </div>
           </div>
         </div>
