@@ -1,13 +1,14 @@
 
+import Banner from "@/components/Banner/Banner";
 import dynamic from "next/dynamic";
 const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));
-const Banner = dynamic(() => import("@/components/Banner/Banner"));
+
 const HomePage = () => {
   return (
     <div >
       <div >
-   
-        <Banner></Banner>
+
+        <Banner />
         <h1 className='text-center text-2xl p-5'>This is my home Page</h1>
       </div>
     </div>
