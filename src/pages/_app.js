@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }) {
 
   return getLayout(
     <>
-      <main>
+      <main className={poppins.className}>
         <Component {...pageProps} />
       </main>
     </>

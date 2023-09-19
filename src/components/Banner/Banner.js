@@ -6,19 +6,15 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 const BannerAds = dynamic(() => import("./BannerAds"));
+import imgUrls from "@/assets/BannerImage/BannerImage";
+
+
 
 const Banner = () => {
-  const imgUrls = [
-    "https://i.ibb.co/tPxWvCw/realmi.jpg",
-    "https://i.ibb.co/PW2HtSN/oppo-f19-pro.png",
-    "https://i.ibb.co/fxjRy0y/vivo-x80.png",
-    "https://i.ibb.co/QCFx4xr/xiaomi-redmi-note-11-pro.png",
-  ];
-
   return (
     <div style={{ padding: "40px 0px" }}>
-      <div className='Sub-banner-container md:gap-4 max-w-screen-xl mx-auto md:grid md:grid-cols-12 '>
-        <div className='box m-3 md:m-0 hidden md:flex col-span-4 h-[400px] shadow-md'>
+      <div className='md:gap-4 max-w-screen-2xl mx-auto md:grid md:grid-cols-12 '>
+        <div className='box m-3 md:m-0 hidden md:flex col-span-4 h-[500px] shadow-md'>
           <div className='sub-banner-img-container'>
             <Image
               className='h-[100%]'
@@ -32,7 +28,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className='box m-3 md:m-0  md:col-span-8 h-[400px] shadow-md'>
+        <div className='box m-3 md:m-0  md:col-span-8 h-[500px] shadow-md'>
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -49,7 +45,19 @@ const Banner = () => {
             {imgUrls.map((imageUrl, index) => (
               <SwiperSlide key={index}>
                 <div className='sub-banner-img-container'>
-                  <Image width={500} height={500} src={imageUrl} alt='' as='image' priority={true} />
+                  <Image
+                    width={600}
+                    height={300}
+                    src={imageUrl}
+                    alt='Banner'
+                    as='image'
+                    priority={true}
+                    sizes='100vw'
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
                 </div>
               </SwiperSlide>
             ))}
