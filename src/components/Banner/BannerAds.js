@@ -2,7 +2,7 @@ import Image from 'next/image';
 const BannerAds = () => {
     return (
       <>
-        <div className='box m-3 md:m-0 md:col-span-6 h-[170px] shadow-md '>
+        <div className='box m-3 md:m-0 md:col-span-6 h-[180px] shadow-md '>
           <div className='sub-banner-img-container'>
             <Image
               width={500}
@@ -13,7 +13,7 @@ const BannerAds = () => {
             />
           </div>
         </div>
-        <div className='box m-3 md:m-0  md:col-span-6 h-[170px] shadow-md'>
+        <div className='box m-3 md:m-0  md:col-span-6 h-[180px] shadow-md'>
           <div className='sub-banner-img-container'>
             <Image
               width={500}

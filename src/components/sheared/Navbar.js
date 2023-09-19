@@ -18,12 +18,12 @@ const Navbar = () => {
               className='mx-4 py-5 hidden md:block'>
               <Image
                 src='https://seeklogo.com/images/S/startech-logo-0BF29AE753-seeklogo.com.png'
-                sizes="100vw"
+                sizes='100vw'
                 width={117}
                 height={92}
                 style={{
-                  width:'6rem',
-                  height:'100%'
+                  width: "6rem",
+                  height: "100%",
                 }}
                 alt='Logo'
                 as='logo'
@@ -44,12 +44,15 @@ const Navbar = () => {
             <div className='flex justify-center'>
               <div className='xm:mx-2 mx-3 flex items-center'>
                 <HiOutlineInboxIn className='text-[#ef4a23] mr-4 lg:text-2xl text-xl' />
-                <div>
-                  <h3 className='text-[#fff] text-xm'>Offers</h3>
-                  <p className='text-[#acabab] text-sm hidden lg:block'>
-                    Latest Offers
-                  </p>
-                </div>
+                <Link href={"/Products"}>
+                  {" "}
+                  <div>
+                    <h3 className='text-[#fff] text-xm'>Offers</h3>
+                    <p className='text-[#acabab] text-sm hidden lg:block'>
+                      Latest Offers
+                    </p>
+                  </div>
+                </Link>
               </div>
               <div className='mx-5 flex items-center'>
                 <MdOutlineElectricBolt className='text-[#ef4a23] mr-4 text-2xl sm:text-3xl' />
