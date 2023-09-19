@@ -10,17 +10,17 @@ const BsFillCartCheckFill = dynamic(() =>
 
 const Button = dynamic(() => import("../Button/Button"));
 
-const Product = ({ img }) => {
+const Product = ({ post }) => {
   return (
     <div className='w-full bg-white border border-gray-200 rounded-lg shadow '>
       <div className=''>
         <Image
-          src={img}
+          src={post.images[0].url}
           alt='product image'
           width={600}
           height={400}
           as='card image'
-          priority={false}
+          priority={true}
           style={{
             objectFit: "cover", // or "contain" depending on your layout needs
             objectPosition: "center center", // adjust as needed
@@ -31,20 +31,18 @@ const Product = ({ img }) => {
       </div>
       <div className='px-5 pb-5'>
         <a href='#'>
-          <h5 className='text-xl font-bold tracking-tight text-gray-800 px-3'>
-            Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+          <h5 className='text-xl font-semibold tracking-tight text-gray-800 px-3'>
+            {post.title}
           </h5>
         </a>
-        <div className='flex items-center mt-2.5 mb-5 text-2xl space-x-3'>
-          <AiFillStar className='text-[#ffc934]'></AiFillStar>
-          <AiFillStar className='text-[#ffc934]'></AiFillStar>
-          <AiFillStar className='text-[#ffc934]'></AiFillStar>
-          <AiFillStar className='text-[#ffc934]'></AiFillStar>
-          <AiFillStar className='text-[#ffc934]'></AiFillStar>
-          <h6 className=''>5.0</h6>
+        <div className='flex items-center mt-2.5 mb-5 text-xl space-x-3'>
+          {Array.from({ length: post.rating }, (_, index) => (
+            <AiFillStar key={index} className='text-[#ffc934]' />
+          ))}
+          <h6>{post.rating}</h6>
         </div>
         <div className='flex items-center justify-between'>
-          <span className='text-3xl font-bold'>$599</span>
+          <span className='text-3xl font-bold'>$ {post.price}</span>
           <Button button='Add to Cart' icon={<BsFillCartCheckFill />} />
         </div>
       </div>
