@@ -6,15 +6,11 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 const BannerAds = dynamic(() => import("./BannerAds"));
+import imgUrls from "@/assets/BannerImage/BannerImage";
+
+
 
 const Banner = () => {
-  const imgUrls = [
-    "https://i.ibb.co/tPxWvCw/realmi.jpg",
-    "https://i.ibb.co/PW2HtSN/oppo-f19-pro.png",
-    "https://i.ibb.co/fxjRy0y/vivo-x80.png",
-    "https://i.ibb.co/QCFx4xr/xiaomi-redmi-note-11-pro.png",
-  ];
-
   return (
     <div style={{ padding: "40px 0px" }}>
       <div className='md:gap-4 max-w-screen-2xl mx-auto md:grid md:grid-cols-12 '>
@@ -56,7 +52,7 @@ const Banner = () => {
                     alt='Banner'
                     as='image'
                     priority={true}
-                    sizes="100vw"
+                    sizes='100vw'
                     style={{
                       width: "100%",
                       height: "100%",
