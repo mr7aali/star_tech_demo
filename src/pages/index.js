@@ -10,15 +10,20 @@ const HomePage = ({posts}) => {
   return (
     <div>
       <Head>
+        <meta charset='UTF-8' />
+        <meta name='keywords' content='titla, meta, nextjs' />
+        <meta name='author' content='Syamlal CM' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta name='description' content='Tech products home page'></meta>
         <title>Home</title>
       </Head>
       <div>
         <Banner />
-        <div className="mb-12">
+        <div className='mb-12'>
           <Product posts={posts}></Product>
         </div>
-        <div className="mb-12">
-          <Review/>
+        <div className='mb-12'>
+          <Review />
         </div>
         <h1 className='text-center text-2xl p-5'>This is my home Page</h1>
       </div>

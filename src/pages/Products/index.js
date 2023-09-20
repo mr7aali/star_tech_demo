@@ -4,11 +4,18 @@ import Head from "next/head";
 const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));
 const Card = dynamic(() => import("@/sheared/Card/ProductCard"));
 
-const Product = ({data}) => {
-  const posts = data.data
+const Product = ({ data }) => {
+  const posts = data.data;
   return (
     <div>
       <Head>
+        <meta charset='UTF-8' />
+        <meta name='keywords' content='titla, meta, nextjs' />
+        <meta name='author' content='Syamlal CM' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta
+          name='description'
+          content='View all tech related product'></meta>
         <title>All Products</title>
       </Head>
       <div>

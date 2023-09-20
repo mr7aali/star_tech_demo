@@ -31,15 +31,15 @@ const Product = ({ post }) => {
       </div>
       <div className='px-5 pb-5'>
         <a href='#'>
-          <h5 className='text-xl font-semibold tracking-tight text-gray-800 px-3'>
+          <h1 className='text-xl font-semibold tracking-tight text-gray-800 px-3'>
             {post.title}
-          </h5>
+          </h1>
         </a>
         <div className='flex items-center mt-2.5 mb-5 text-xl space-x-3'>
           {Array.from({ length: post.rating }, (_, index) => (
             <AiFillStar key={index} className='text-[#ffc934]' />
           ))}
-          <h6>{post.rating}</h6>
+          <h2>{post.rating}</h2>
         </div>
         <div className='flex items-center justify-between'>
           <span className='text-3xl font-bold'>$ {post.price}</span>
