@@ -1,4 +1,4 @@
-import { loadAllProduct } from "@/utils/Home/LoadAllProducts";
+import { loadAllProduct } from "@/utils/Product/LoadAllProducts";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));

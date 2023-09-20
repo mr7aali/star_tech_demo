@@ -1,5 +1,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import Link from "next/link";
+
 const AiFillStar = dynamic(() =>
   import("react-icons/ai").then((module) => module.AiFillStar)
 );
@@ -9,6 +11,7 @@ const BsFillCartCheckFill = dynamic(() =>
 );
 
 const Button = dynamic(() => import("../Button/Button"));
+const View = dynamic(() => import("../Button/View"));
 
 const Product = ({ post }) => {
   return (
@@ -44,6 +47,11 @@ const Product = ({ post }) => {
         <div className='flex items-center justify-between'>
           <span className='text-3xl font-bold'>$ {post.price}</span>
           <Button button='Add to Cart' icon={<BsFillCartCheckFill />} />
+        </div>
+        <div className="text-center my-3">
+          <Link href={`/Products/${post.id}`} aria-label='view product details'>
+            <View button='View All' />
+          </Link>
         </div>
       </div>
     </div>
