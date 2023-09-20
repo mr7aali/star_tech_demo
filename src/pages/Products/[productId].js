@@ -21,7 +21,7 @@ const BsFillCartCheckFill = dynamic(() =>
 const View = dynamic(() => import("@/sheared/Button/View"));
 
 const Details = ({ post }) => {
-  console.log(post.features);
+
   return (
     <div>
       <Head>
@@ -38,46 +38,7 @@ const Details = ({ post }) => {
 
           <div className='container px-5 py-5 mx-auto'>
             <div className='lg:w-4/5 mx-auto flex flex-wrap'>
-              {/* <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                  delay: 2550,
-                  disableOnInteraction: true,
-                }}
-                pagination={{
-                  clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className='mySwiper'>
-                {post.images.map((img, index) => (
-                  <SwiperSlide key={index}>
-
-                    <div className="h-[300px] " style={{
-                      // border: '1px solid red'
-                    }}>
-                      <div className='sub-banner-img-container'>
-                        <Image
-                          width={600}
-                          height={300}
-                          src={img.url}
-                          alt='Banner'
-                          as='image'
-                          priority={true}
-                          sizes='100vw'
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                          }}
-
-                        />
-                      </div>
-                    </div>
-
-                  </SwiperSlide>
-                ))}
-              </Swiper> */}
+              
               <Slider images={post.images}/>
 
               <div className='mx-auto lg:w-4/5 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
