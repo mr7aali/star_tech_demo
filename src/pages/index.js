@@ -10,7 +10,7 @@ const HomePage = ({posts}) => {
   return (
     <div>
       <Head>
-        <meta charset='UTF-8' />
+        <meta charSet='UTF-8' />
         <meta name='keywords' content='titla, meta, nextjs' />
         <meta name='author' content='Syamlal CM' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
