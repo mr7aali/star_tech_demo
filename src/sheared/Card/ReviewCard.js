@@ -5,9 +5,9 @@ const ReviewCard = () => {
     <div className='grid mb-8 border border-gray-200 rounded-lg shadow-sm md:mb-12 md:grid-cols-1'>
       <figure className='flex flex-col items-center justify-center p-8 text-center border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r bg-[#081621] '>
         <blockquote className='max-w-2xl mx-auto mb-4 text-whitelg:mb-8 text-gray-300'>
-          <h3 className='text-lg font-semibold text-gray-400'>
+          <h2 className='text-lg font-semibold text-gray-400'>
             Very easy this was to integrate
-          </h3>
+          </h2>
           <p className='my-4'>
             If you care for your time, I hands down would go with this.
           </p>

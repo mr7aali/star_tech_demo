@@ -12,8 +12,6 @@ const Navbar = () => {
     <div className='bg-[#081621]'>
       <div className=' mx-auto top  flex justify-between items-center'>
         <div className='container mx-auto flex justify-center items-center'>
-
-
           <Link
             href={"/"}
             aria-label='Start tech'
@@ -44,19 +42,18 @@ const Navbar = () => {
           </div>
 
           <div className='flex justify-center ml-auto'>
-
-
             <div className='xm:mx-2 mx-3 flex items-center'>
-
               {/* <HiOutlineInboxIn className='cursor-pointer hidden sm:block text-[#ef4a23] mr-4 lg:text-2xl text-3xl' /> */}
-              <Link href={'/Products'}>
+              <Link href={"/Products"} aria-label='View all products'>
                 <HiOutlineInboxIn className='cursor-pointer text-[#ef4a23] mr-4 lg:text-2xl text-3xl' />
               </Link>
 
               <Link href={"/Products"}>
                 {" "}
                 <div>
-                  <h3 className='text-[#fff] text-xm hidden sm:block'>Offers</h3>
+                  <h3 className='text-[#fff] text-xm hidden sm:block'>
+                    Offers
+                  </h3>
                   <p className='text-[#acabab] text-sm hidden md:block'>
                     Latest Offers
                   </p>
@@ -64,21 +61,21 @@ const Navbar = () => {
               </Link>
             </div>
 
-
             <div className='mx-5 flex items-center'>
-              <Link href={'#productComponent'}>
+              <Link href={"#productComponent"} aria-label='View all products'>
                 <MdOutlineElectricBolt className='text-[#ef4a23] mr-4 text-3xl sm:text-3xl' />
               </Link>
               <Link href={"#productComponent"}>
                 <div>
-                  <h3 className='text-[#fff] text-xm hidden sm:block'>Desktop Deal</h3>
+                  <h3 className='text-[#fff] text-xm hidden sm:block'>
+                    Desktop Deal
+                  </h3>
                   <p className='text-[#acabab] text-sm hidden md:block'>
                     Special Deals
                   </p>
                 </div>
               </Link>
             </div>
-
 
             <div className='mx-5 flex items-center'>
               <MdOutlineManageAccounts className='text-[#ef4a23] mr-4 text-3xl' />
@@ -100,12 +97,7 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-
-
-
           </div>
-
-
         </div>
       </div>
     </div>
