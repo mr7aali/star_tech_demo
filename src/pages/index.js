@@ -6,7 +6,8 @@ const Product = dynamic(() => import("@/components/HomeProduct/Product"));
 const Review = dynamic(() => import("@/components/HomeReviews/Review"));
 import { loadProduct } from "@/utils/Home/LoadProduct";
 
-const HomePage = ({posts}) => {
+const HomePage = ({ posts }) => {
+  console.log(posts);
   return (
     <div>
       <Head>

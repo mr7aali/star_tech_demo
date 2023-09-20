@@ -13,8 +13,9 @@
   display: inline-block;
   background-color: black;
   opacity: 0.4;
-  
+
 }
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -33,49 +34,55 @@
   object-fit: cover;
 }
 
-.Banner-Blg-container{
- position: absolute;
- top: 20%;
- width: 100%;
+.Banner-Blg-container {
+  position: absolute;
+  top: 20%;
+  width: 100%;
 }
-@media only screen and (min-width:0px) and (max-width:772px){
- .Banner-Blg-container{
-     top: 5%;
- }
- .swiper-slide img{
-     height: 420px;
- }
+
+@media only screen and (min-width:0px) and (max-width:772px) {
+  .Banner-Blg-container {
+    top: 5%;
+  }
+
+  .swiper-slide img {
+    height: 420px;
+  }
 }
 
 .swiper-pagination-bullet {
- width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,80px)) !important;
- height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,8px)) !important;
- border-radius: 0% !important;
- border: 1px solid black !important;
-} 
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 80px)) !important;
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px)) !important;
+  border-radius: 0% !important;
+  border: 1px solid black !important;
+}
 
 .swiper-pagination-bullet-active {
- opacity: var(--swiper-pagination-bullet-opacity, 1);
- background: var(--swiper-pagination-color,var(--swiper-theme-color));
- border: none;
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+  border: none;
 }
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
- bottom: 10px;
- left: 0;
- width: 100%; 
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
 
 }
 
 /*! -----------------------  banner  style  -----------------------*/
 
-.sub-banner-img-container{
+.sub-banner-img-container {
   overflow: hidden;
-   height: 100%;
-  width: 100%; 
+  height: 100%;
+  width: 100%;
   display: block;
 }
 
-.sub-banner-img-container img{
+.sub-banner-img-container img {
   height: 100%;
   width: 100%;
   transition: transform 1s;
@@ -85,7 +92,7 @@
   -o-transition: transform 1s;
 }
 
-.sub-banner-img-container:hover img{
+.sub-banner-img-container:hover img {
   transform: scale(1.3);
   cursor: pointer;
   -webkit-transform: scale(1.3);
@@ -94,4 +101,32 @@
   -o-transform: scale(1.3);
 }
 
+/* /.................. npm install keen-slider's Style ------------------------- */
 
+[class^="number-slide"],
+[class*=" number-slide"] {
+  /* background: grey; */
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  /* height: 200px; */
+  max-height: 100vh;
+}
+
+.thumbnail .keen-slider__slide {
+  font-size: 30px;
+  height: 100px;
+}
+
+.thumbnail .keen-slider__slide {
+  cursor: pointer;
+}
+
+.thumbnail .keen-slider__slide.active {
+  /* border: 2px dashed black; */
+  border:2px solid black ;
+}
