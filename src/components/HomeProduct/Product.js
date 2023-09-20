@@ -5,7 +5,7 @@ const View = dynamic(() => import("@/sheared/Button/View"));
 const Product = ({ posts }) => {
   const data = posts.data;
   return (
-    <div className='container mx-auto'>
+    <div id="productComponent" className='container mx-auto'>
       <h1 className=' text-center font-semibold text-2xl mb-10'>
         Product component
       </h1>
