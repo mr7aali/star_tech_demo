@@ -1,14 +1,13 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { loadProductDetails } from "@/utils/Product/ProductDetails";
 import React from "react";
 import Link from "next/link";
-// import Image from "next/image";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
-// import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));
 const AiFillStar = dynamic(() =>
@@ -34,7 +33,7 @@ const Details = ({ post }) => {
         <section className='text-gray-700 body-font overflow-hidden bg-white'>
           <div className='container px-5 py-20 mx-auto'>
             <div className='lg:w-4/5 mx-auto flex flex-wrap'>
-              {/* <Swiper
+              <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
@@ -47,13 +46,13 @@ const Details = ({ post }) => {
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className='mySwiper'>
-                {img.map((imageUrl, index) => (
+                {post.images.map((img, index) => (
                   <SwiperSlide key={index}>
                     <div className='sub-banner-img-container'>
                       <Image
                         width={600}
                         height={300}
-                        src={imageUrl}
+                        src={img.url}
                         alt='Banner'
                         as='image'
                         priority={true}
@@ -66,7 +65,7 @@ const Details = ({ post }) => {
                     </div>
                   </SwiperSlide>
                 ))}
-              </Swiper> */}
+              </Swiper>
               <div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
                 <h2 className='title-font text-gray-500 tracking-widest'>
                   {post?.category}
@@ -162,17 +161,13 @@ export default Details;
 Details.getLayout = function getLayout(page) {
   return <RootLayouts>{page}</RootLayouts>;
 };
-export async function getStaticPaths() {
-  const paths = await loadProductDetails();
-  return { paths, fallback: true };
-}
 
-export async function getStaticProps(context) {
-  const { params } = context;
+export async function getServerSideProps(query) {
+  const {params} = query;
   const res = await fetch(
     `https://start-tech-server.vercel.app/api/v1/product/${params.productId}`
   );
   const data = await res.json();
   const post = data.data;
-  return { props: { post }, revalidate: 10 };
+  return { props: { post }};
 }
