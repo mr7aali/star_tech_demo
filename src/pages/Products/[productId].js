@@ -2,12 +2,14 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import Image from "next/image";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+// import { Autoplay, Pagination, Navigation } from "swiper/modules";
+// import Features from "@/components/sheared/Features";
+import Slider from "@/components/sheared/Slider";
 
 const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));
 const AiFillStar = dynamic(() =>
@@ -19,6 +21,7 @@ const BsFillCartCheckFill = dynamic(() =>
 const View = dynamic(() => import("@/sheared/Button/View"));
 
 const Details = ({ post }) => {
+
   return (
     <div>
       <Head>
@@ -31,42 +34,14 @@ const Details = ({ post }) => {
       </Head>
       <div className='container mx-auto'>
         <section className='text-gray-700 body-font overflow-hidden bg-white'>
-          <div className='container px-5 py-20 mx-auto'>
+
+
+          <div className='container px-5 py-5 mx-auto'>
             <div className='lg:w-4/5 mx-auto flex flex-wrap'>
-              <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                  delay: 2550,
-                  disableOnInteraction: true,
-                }}
-                pagination={{
-                  clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className='mySwiper'>
-                {post.images.map((img, index) => (
-                  <SwiperSlide key={index}>
-                    <div className='sub-banner-img-container'>
-                      <Image
-                        width={600}
-                        height={300}
-                        src={img.url}
-                        alt='Banner'
-                        as='image'
-                        priority={true}
-                        sizes='100vw'
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
+              
+              <Slider images={post.images}/>
+
+              <div className='mx-auto lg:w-4/5 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
                 <h2 className='title-font text-gray-500 tracking-widest'>
                   {post?.category}
                 </h2>
@@ -80,8 +55,8 @@ const Details = ({ post }) => {
                     ))}
                     <h2>{post?.rating}</h2>
                   </div>
-                  <span className='flex ml-3 pl-3 py-2 border-l-2 border-gray-200'>
-                    <a className='text-gray-500'>
+                  <span className='ml-auto flex  pl-3 py-2 border-l-2 border-gray-200'>
+                    <a className='text-gray-500 hover:text-red-500 cursor-pointer m-2'>
                       <svg
                         fill='currentColor'
                         strokeLinecap='round'
@@ -92,7 +67,7 @@ const Details = ({ post }) => {
                         <path d='M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z'></path>
                       </svg>
                     </a>
-                    <a className='ml-2 text-gray-500'>
+                    <a className='text-gray-500 hover:text-red-500 cursor-pointer m-2'>
                       <svg
                         fill='currentColor'
                         strokeLinecap='round'
@@ -103,7 +78,7 @@ const Details = ({ post }) => {
                         <path d='M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z'></path>
                       </svg>
                     </a>
-                    <a className='ml-2 text-gray-500'>
+                    <a className='text-gray-500 hover:text-red-500 cursor-pointer m-2'>
                       <svg
                         fill='currentColor'
                         strokeLinecap='round'
@@ -116,7 +91,7 @@ const Details = ({ post }) => {
                     </a>
                   </span>
                 </div>
-                <p className='leading-relaxed'>{post?.description}</p>
+                <p className='leading-relaxed text-justify'>{post?.description}</p>
                 <div className='flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5'>
                   <div className='flex'>
                     <span className='mr-3'>Color</span>
@@ -132,7 +107,7 @@ const Details = ({ post }) => {
                   <button className='flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded'>
                     <BsFillCartCheckFill />
                   </button>
-                  <button className='rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4'>
+                  <button className='rounded-full hover:text-red-500 w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4'>
                     <svg
                       fill='currentColor'
                       strokeLinecap='round'
@@ -150,6 +125,10 @@ const Details = ({ post }) => {
               </div>
             </div>
           </div>
+
+          {/* <div style={{ border: '1px solid red' }}>
+            <Features />
+          </div> */}
         </section>
       </div>
     </div>
@@ -163,11 +142,11 @@ Details.getLayout = function getLayout(page) {
 };
 
 export async function getServerSideProps(query) {
-  const {params} = query;
+  const { params } = query;
   const res = await fetch(
     `https://start-tech-server.vercel.app/api/v1/product/${params.productId}`
   );
   const data = await res.json();
   const post = data.data;
-  return { props: { post }};
+  return { props: { post } };
 }

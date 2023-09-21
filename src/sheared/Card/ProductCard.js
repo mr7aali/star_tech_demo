@@ -44,13 +44,13 @@ const Product = ({ post }) => {
           ))}
           <h2>{post.rating}</h2>
         </div>
-        <div className='flex items-center justify-between'>
+        <div  className='flex items-center justify-between'>
           <span className='text-3xl font-bold'>$ {post.price}</span>
-          <Button button='Add to Cart' icon={<BsFillCartCheckFill />} />
+          <Button  button='Add to Cart' icon={<BsFillCartCheckFill />} />
         </div>
         <div className="text-center my-3">
-          <Link href={`/Products/${post.id}`} aria-label='view product details'>
-            <View button='View All' />
+          <Link  href={`/Products/${post.id}`} aria-label='view product details'>
+            <View button='Details' />
           </Link>
         </div>
       </div>
