@@ -43,7 +43,6 @@ const Navbar = () => {
 
           <div className='flex justify-center ml-auto'>
             <div className='xm:mx-2 mx-3 flex items-center'>
-              {/* <HiOutlineInboxIn className='cursor-pointer hidden sm:block text-[#ef4a23] mr-4 lg:text-2xl text-3xl' /> */}
               <Link href={"/Products"} aria-label='View all products'>
                 <HiOutlineInboxIn className='cursor-pointer text-[#ef4a23] mr-4 lg:text-2xl text-3xl' />
               </Link>

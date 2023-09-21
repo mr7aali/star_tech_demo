@@ -12,11 +12,11 @@ const Product = ({ data }) => {
       <div>
         <h1 className='text-center text-2xl p-5'>This is my product Page</h1>
         <div className='flex flex-wrap justify-center gap-4'>
-          {posts.map((post, index) => (
+          {posts.map((post) => (
             <div
-              key={index}
+              key={post.id}
               className='w-full sm:w-1/2 md:w-1/2 lg:w-[40%] xl:w-[24%] transform transition-transform ease-out hover:scale-105'>
-              <Card post={post} />
+              <Card  post={post} />
             </div>
           ))}
         </div>

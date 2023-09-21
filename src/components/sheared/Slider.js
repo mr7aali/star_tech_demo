@@ -4,8 +4,8 @@ import { ThumbnailPlugin } from "@/components/sheared/helpers/Helpers"
 import "keen-slider/keen-slider.min.css";
 
 
-
 export default function Slider({ images }) {
+
     const [sliderRef, instanceRef] = useKeenSlider({
         initial: 0,
     })
@@ -19,24 +19,25 @@ export default function Slider({ images }) {
         },
         [ThumbnailPlugin(instanceRef)]
     )
-
     return (
         <>
             <div ref={sliderRef} className="keen-slider">
                 {
-                    images.map((img, index) => <>
-                        <SliderImage key={index} img={img.url} />
-                    </>)
+                    images.map((img, index) => <div key={index}>
+                        <SliderImage img={img.url} />
+                    </div>)
                 }
             </div>
             {/* -------------------------- thumbnail ---------------------- */}
             <div ref={thumbnailRef} className="keen-slider flex justify-center thumbnail">
                 {
-                    images.map((img, index) => <>
-                        <SliderImage key={index} img={img.url} />
-                    </>)
+                    images.map((img, index) => <div key={index} >
+                        <SliderImage img={img.url} />
+                    </div>)
                 }
             </div>
         </>
     )
+
+
 }
