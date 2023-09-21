@@ -63,7 +63,7 @@ const Banner = () => {
             ))}
           </Swiper>
         </div>
-        <BannerAds></BannerAds>
+        <BannerAds />
       </div>
     </div>
   );
