@@ -20,8 +20,6 @@ const Details = ({ post }) => {
       <HeadTag title={'Product Details'} descriptionContent={"Tech products details page"} />
       <div className='container mx-auto'>
         <section className='text-gray-700 body-font overflow-hidden bg-white'>
-
-
           <div className='container px-5 py-5 mx-auto'>
             <div className='lg:w-4/5 mx-auto flex flex-wrap'>
 
@@ -106,11 +104,6 @@ const Details = ({ post }) => {
                       </svg>
                     </button>
                   </div>
-
-
-
-
-
                 </div>
                 <Link href={"/Products"} aria-label='Button for product page'>
                   <View button='Back'></View>
@@ -118,8 +111,6 @@ const Details = ({ post }) => {
               </div>
             </div>
           </div>
-
-
         </section>
       </div>
     </div>

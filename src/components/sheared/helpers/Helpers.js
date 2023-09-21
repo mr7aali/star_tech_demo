@@ -3,7 +3,7 @@ const { default: Image } = require("next/image");
 export const SliderImage = ({ img }) => {
     
     return (
-        <div>
+        <div >
             <div className="keen-slider__slide number-slide ">
                 <div >
                     <div className='sub-banner-img-container'>
