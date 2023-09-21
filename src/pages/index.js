@@ -1,23 +1,17 @@
 import dynamic from "next/dynamic";
-import Head from "next/head";
 const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));
 const Banner = dynamic(() => import("@/components/Banner/Banner"));
 const Product = dynamic(() => import("@/components/HomeProduct/Product"));
 const Review = dynamic(() => import("@/components/HomeReviews/Review"));
 import { loadProduct } from "@/utils/Home/LoadProduct";
+const HeadTag = dynamic(() => import("@/sheared/HeadTag/HeadTag"));
+
+
 
 const HomePage = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
-      <Head>
-        <meta charSet='UTF-8' />
-        <meta name='keywords' content='titla, meta, nextjs' />
-        <meta name='author' content='Syamlal CM' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <meta name='description' content='Tech products home page'></meta>
-        <title>Home</title>
-      </Head>
+      <HeadTag title={'Home'} descriptionContent={"Tech products home page"} />
       <div>
         <div>
           <Banner />
@@ -36,8 +30,6 @@ const HomePage = ({ posts }) => {
 
 export default HomePage;
 
-
-
 HomePage.getLayout = function getLayout(page) {
   return (
     <RootLayouts>
@@ -45,7 +37,6 @@ HomePage.getLayout = function getLayout(page) {
     </RootLayouts>
   )
 };
-
 
 export async function getStaticProps() {
   const posts = await loadProduct();
