@@ -19,7 +19,9 @@ const HomePage = ({ posts }) => {
         <title>Home</title>
       </Head>
       <div>
-        <Banner />
+        <div>
+          <Banner />
+        </div>
         <div className='mb-12'>
           <Product posts={posts}></Product>
         </div>
