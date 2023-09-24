@@ -1,6 +1,8 @@
-import React from "react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+const View = dynamic(() => import("../Button/View"));
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = ({ currentPage, totalPages }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= totalPages; i++) {
@@ -8,23 +10,30 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   }
 
   return (
-    <ul className='pagination flex flex-wrap justify-center'>
-      {pageNumbers.map((number) => (
-        <li
-          key={number}
-          className={`page-item m-1 ${
-            currentPage === number
-              ? "bg-blue-500 text-white"
-              : "bg-white text-gray-800 hover:bg-gray-100"
-          }`}>
-          <button
-            className='page-link px-3 py-1 rounded-full'
-            onClick={() => onPageChange(number)}>
-            {number}
-          </button>
-        </li>
-      ))}
-    </ul>
+    <div className='flex flex-wrap items-center mt-4'>
+      <div className='flex justify-center flex-wrap items-center leading-[4rem]'>
+        {currentPage > 1 && (
+          <Link href={`/Products?page=${currentPage - 1}`} className='mx-2'>
+            <View button={"Previous"}></View>
+          </Link>
+        )}
+
+        {Array.from({ length: totalPages }, (_, index) => (
+          <Link
+            key={index}
+            href={`/Products?page=${index + 1}`}
+            className={index + 1 === currentPage ? "font-bold mx-2" : "mx-2"}>
+            <View button={index + 1}></View>
+          </Link>
+        ))}
+
+        {currentPage < totalPages && (
+          <Link href={`/Products?page=${currentPage + 1}`} className='mx-2'>
+            <View button={"Next"}></View>
+          </Link>
+        )}
+      </div>
+    </div>
   );
 };
 

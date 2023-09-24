@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 const RootLayouts = dynamic(() => import("@/components/Layouts/RootLayouts"));
 const Card = dynamic(() => import("@/sheared/Card/ProductCard"));
 const HeadTag = dynamic(() => import("@/sheared/HeadTag/HeadTag"));
-import Link from "next/link";
+const Pagination = dynamic(() => import("@/sheared/Pagination/Pagination"));
 
 const Product = ({ data, currentPage, totalPages }) => {
   const posts = data.data;
@@ -27,33 +27,9 @@ const Product = ({ data, currentPage, totalPages }) => {
           ))}
         </div>
       </div>
-
-      {/* Responsive Pagination Buttons */}
-      <div className='flex flex-col items-center mt-4'>
-        <div className='flex justify-center'>
-          {currentPage > 1 && (
-            <Link href={`/Products?page=${currentPage - 1}`} className='mx-2'>
-              Previous
-            </Link>
-          )}
-
-          {Array.from({ length: totalPages }, (_, index) => (
-            <Link
-              key={index}
-              href={`/Products?page=${index + 1}`}
-              className={index + 1 === currentPage ? "font-bold mx-2" : "mx-2"}>
-              {index + 1}
-            </Link>
-          ))}
-
-          {currentPage < totalPages && (
-            <Link href={`/Products?page=${currentPage + 1}`} className='mx-2'>
-              Next
-            </Link>
-          )}
-        </div>
-        <div className='mt-4 text-center'>{/* Add responsive text here */}</div>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}></Pagination>
     </div>
   );
 };
