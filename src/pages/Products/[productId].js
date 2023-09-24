@@ -126,7 +126,7 @@ Details.getLayout = function getLayout(page) {
 export async function getServerSideProps(query) {
   const { params } = query;
   const res = await fetch(
-    `https://start-tech-server.vercel.app/api/v1/product/${params.productId}`
+    `https://assignment-3-8p6flgq4f-mr7aali.vercel.app/api/v1/product/${params.productId}`
   );
   const data = await res.json();
   const post = data.data;
