@@ -49,7 +49,7 @@ const Product = ({ post }) => {
           <Button  button='Add to Cart' icon={<BsFillCartCheckFill />} />
         </div>
         <div className="text-center my-3">
-          <Link  href={`/Products/${post.id}`} aria-label='view product details'>
+          <Link  href={`/Products/${post._id}`} aria-label='view product details'>
             <View button='Details' />
           </Link>
         </div>
